@@ -1,4 +1,4 @@
-/*\n * main.cpp\n *\n * Main entry point for the ESP32 A2DP Sink with high-res codec support.\n * This coordinates all the modules: Bluetooth audio, DSP, LED matrix,\n * BLE control, rotary encoders, and the whole shebang.\n *\n * Supports LDAC, aptX, aptX-HD, AAC, and SBC codecs.\n */\n\n#include <string>
+#include <string>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
@@ -1085,9 +1085,8 @@ static void onConnectionState(esp_a2d_connection_state_t state, void* user) {
 static void onAudioState(esp_a2d_audio_state_t state, void* user) {
     const char* stateStr = "Unknown";
     switch (state) {
-        case ESP_A2D_AUDIO_STATE_REMOTE_SUSPEND: stateStr = "REMOTE_SUSPEND"; break;
-        case ESP_A2D_AUDIO_STATE_STOPPED:        stateStr = "STOPPED"; break;
-        case ESP_A2D_AUDIO_STATE_STARTED:        stateStr = "STARTED"; break;
+        case ESP_A2D_AUDIO_STATE_SUSPEND: stateStr = "SUSPEND"; break;
+        case ESP_A2D_AUDIO_STATE_STARTED: stateStr = "STARTED"; break;
     }
     
     ESP_LOGI(TAG, ">>> A2DP Audio State: %s", stateStr);
