@@ -1,4 +1,5 @@
-/*\n * main.cpp\n *\n * Main entry point for the ESP32 A2DP Sink with high-res codec support.\n * This coordinates all the modules: Bluetooth audio, DSP, LED matrix,\n * BLE control, rotary encoders, and the whole shebang.\n *\n * Supports LDAC, aptX, aptX-HD, AAC, and SBC codecs.\n */\n\n#include <string>
+/*\n * main.cpp\n *\n * Main entry point for the ESP32 A2DP Sink with high-res codec support.\n * This coordinates all the modules: Bluetooth audio, DSP, LED matrix,\n * BLE control, rotary encoders, and the whole shebang.\n *\n * Supports LDAC, aptX, aptX-HD, AAC, and SBC codecs.\n */
+#include <string>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
